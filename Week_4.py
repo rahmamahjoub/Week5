@@ -11,7 +11,7 @@ import joblib
 model = joblib.load('tic_tac_toe.pkl') # Load the Model
 @app.route('/')
 def home():
-    return render_template('w5.html')
+    return render_template('w.html')
 @app.route('/predict',methods=['POST', 'GET'])
 def predict():
     '''
@@ -21,10 +21,10 @@ def predict():
     final_features = [np.array(int_features)]
     pred = model.predict(final_features)
     if pred == 0:
-            return render_template('w5.html', 'You Lost')
+            return render_template('w.html', 'You Lost')
 
     else:
-            return render_template('w5.html', 'You Won')
+            return render_template('w.html', 'You Won')
     
 if __name__ == "__main__":
     app.run(debug=True)
