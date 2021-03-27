@@ -21,10 +21,10 @@ def predict():
     final_features = [np.array(int_features)]
     pred = model.predict(final_features)
     if pred == 0:
-            return render_template('w5.html', 'You Lost')
+            return render_template('w5.html', prediction_text='You Lost {}'.format(pred))
 
     else:
-            return render_template('w5.html', 'You Won')
+            return render_template('w5.html', prediction_text='You Won {}'.format(pred))
     
 if __name__ == "__main__":
     app.run(debug=True)
