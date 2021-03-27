@@ -9,7 +9,11 @@ from flask_cors import CORS
 CORS(app)
 import joblib
 model = joblib.load('tic_tac_toe.pkl') # Load the Model
-@app.route('/',methods=['POST'])
+@app.route('/')
+def home():
+    return render_template('w5.html')
+
+@app.route('/predict',methods=['POST'])
 def predict():
     '''
     For rendering results on HTML GUI
@@ -17,11 +21,7 @@ def predict():
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
     pred = model.predict(final_features)
-    if pred == 0:
-            return render_template('w5.html', 'You Lost')
+    return render_template('w5.html', 'You Lost')
 
-    else:
-            return render_template('w5.html', 'You Won')
-    
-if __name__ == "__main__":
+    if __name__ == "__main__":
     app.run(debug=True)
