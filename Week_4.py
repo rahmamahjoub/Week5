@@ -14,17 +14,15 @@ def home():
     return render_template('w5.html')
 @app.route('/predict',methods=['POST'])
 def predict():
-    '''
-    For rendering results on HTML GUI
-    '''
+   
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
     pred = model.predict(final_features)
     if pred == 0:
-            return str(render_template('w5.html', prediction_text='You Lost {}'.format(pred)))
+            return render_template('w5.html', prediction_text='You Lost {}'.format(pred))
 
     else:
-            return str(render_template('w5.html', prediction_text='You Won {}'.format(pred)))
+            return render_template('w5.html', prediction_text='You Won {}'.format(pred))
     
 if __name__ == "__main__":
     app.run(debug=True)
