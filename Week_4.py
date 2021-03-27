@@ -13,7 +13,7 @@ model = joblib.load('tic_tac_toe.pkl') # Load the Model
 def home():
     return render_template('w5.html')
 
-@app.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['GET','POST'])
 def predict():
     '''
     For rendering results on HTML GUI
@@ -21,7 +21,8 @@ def predict():
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
     pred = model.predict(final_features)
-    if pred == 0:
+    output=str(pred)
+    if output == 0:
         return str(render_template('w5.html', 'You Lost'))
     else:
         return str(render_template('w5.html','You Won'))
