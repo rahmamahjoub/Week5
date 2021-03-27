@@ -16,7 +16,7 @@ font-size:15;
   margin-bottom: 2px;
 }
 
-button[type=submit] {
+input[type=submit] {
 font-size:20px;
   background-color: #4CAF50;
   color: white;
@@ -27,7 +27,7 @@ font-size:20px;
   
 }
 
-button[type=submit]:hover {
+input[type=submit]:hover {
 font-size:20px;
   background-color: #45a049;
 }
@@ -63,12 +63,11 @@ font-size:20px;
     <input type="text" id="V9" name="V9" placeholder="V9" size="2" required="required"><br><br>
 
  
-	        <button type="submit" id="submit">Predict</button>
-
+    <input id='submit' type="submit" value="Submit">
+	
   </form>
   <br>
-    <br>
-
+   {{ prediction_text }}
    
 </div>
 
