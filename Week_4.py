@@ -21,7 +21,10 @@ def predict():
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
     pred = model.predict(final_features)
-    return render_template('w5.html', 'You Lost')
+    if pred == 0:
+        return str(render_template('w5.html', 'You Lost'))
+    else:
+        return str(render_template('w5.html','You Won'))
 
     if __name__ == "__main__":
     app.run(debug=True)
