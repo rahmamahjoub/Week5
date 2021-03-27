@@ -1,30 +1,30 @@
 # Importing Laibraries
 import flask
 from flask import request # for reading url parameters (because we need to send parameters to url)
+from flask import jsonify, render_template
 # initiate Flask
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 from flask_cors import CORS
 CORS(app)
-
+import joblib
+model = joblib.load('tic_tac_toe.pkl') # Load the Model
+@app.route('/')
+def home():
+    return render_template('w5.html')
 @app.route('/predict',methods=['POST'])
 def predict():
-    import joblib
-    model = joblib.load('tic_tac_toe.pkl') # Load the Model
-    pred = model.predict([[request.args['V1'],
-                            request.args['V2'],
-                            request.args['V3'],
-                            request.args['V4'],
-                            request.args['V5'],
-                            request.args['V6'],
-                            request.args['V7'],
-                            request.args['V8'],
-                            request.args['V9'],
-                          ]])
+    '''
+    For rendering results on HTML GUI
+    '''
+    int_features = [int(x) for x in request.form.values()]
+    final_features = [np.array(int_features)]
+    pred = model.predict(final_features)
     if pred == 0:
-        return str('You Lost')
+            return render_template('w5.html', prediction_text='The Result is {}'.format(pred))
+
     else:
-        return str('You Won')
+            return render_template('w5.html', prediction_text='The Result is {}'.format(pred))
     
 if __name__ == "__main__":
     app.run(debug=True)
