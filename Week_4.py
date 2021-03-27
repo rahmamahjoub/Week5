@@ -19,10 +19,10 @@ def predict():
     final_features = [np.array(int_features)]
     pred = model.predict(final_features)
     if pred == 0:
-            return render_template('w5.html', prediction_text='You Lost {}'.format(pred))
+            return render_template('w5.html', pred)
 
     else:
-            return render_template('w5.html', prediction_text='You Won {}'.format(pred))
+            return render_template('w5.html', pred)
     
 if __name__ == "__main__":
     app.run(debug=True)
