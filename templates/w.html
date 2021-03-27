@@ -72,7 +72,7 @@ font-size:20px;
     
     $('#submit').click(function(event){    
 	      event.preventDefault();    
-	      var exist_response = $.ajax({type:"GET",url:"http://127.0.0.1:5000/predict",data:"&V1="+$('#V1').val()+
+	      var exist_response = $.ajax({type:"GET",url:"/predict",data:"&V1="+$('#V1').val()+
 		  "&V2="+$('#V2').val()+"&V3="+$('#V3').val()+"&V4="+$('#V4').val()+"&V5="+$('#V5').val()+"&V6="+$('#V6').val()+
 		  "&V7="+$('#V7').val()+"&V8="+$('#V8').val()+"&V9="+$('#V9').val(),async: false}).responseText;
           $('#r').text("The Result is : "+exist_response);
