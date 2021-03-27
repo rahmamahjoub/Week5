@@ -18,12 +18,11 @@ def predict():
     int_features = [int(x) for x in request.form.values()]
     final_features = [np.array(int_features)]
     pred = model.predict(final_features)
-    p=str(pred)
-    #if pred == 0:
-            return render_template('w5.html', prediction_text='The Result {}'.format(p))
+    if pred == 0:
+            return render_template('w5.html', prediction_text='You Lost {}'.format(pred))
 
-    #else:
-            #return render_template('w5.html', prediction_text='You Won {}'.format(pred))
+    else:
+            return render_template('w5.html', prediction_text='You Won {}'.format(pred))
     
 if __name__ == "__main__":
     app.run(debug=True)
