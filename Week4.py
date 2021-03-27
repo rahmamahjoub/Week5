@@ -7,7 +7,7 @@ app.config["DEBUG"] = True
 from flask_cors import CORS
 CORS(app)
 
-@app.route('/predict',methods=['GET'])
+@app.route('/predict',methods=['POST'])
 def predict():
     import joblib
     model = joblib.load('tic_tac_toe.pkl') # Load the Model
