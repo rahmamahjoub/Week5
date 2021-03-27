@@ -12,7 +12,7 @@ model = joblib.load('tic_tac_toe.pkl') # Load the Model
 @app.route('/')
 def home():
     return render_template('w5.html')
-@app.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['POST', 'GET'])
 def predict():
     '''
     For rendering results on HTML GUI
