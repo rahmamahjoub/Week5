@@ -1,5 +1,6 @@
 # Importing Laibraries
 import flask
+import numpy as np
 from flask import request # for reading url parameters (because we need to send parameters to url)
 from flask import jsonify, render_template
 # initiate Flask
