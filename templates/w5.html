@@ -61,11 +61,14 @@ font-size:20px;
 	    <input type="text" id="V8" name="V8" placeholder="V8" size="2">
     <input type="text" id="V9" name="V9" placeholder="V9" size="2"><br><br>
  
-    <input id='submit' type="submit" value="Submit">
+    <input id='submit' type="submit" value="Submit" onClick="getV()">
 	
   </form>
   <br>
 	<label color="green">  {{ prediction_text }} </label>
 	</div>
+	<script>
+function getV(){document.getElementById("V1").innerHTML = document.getElementById("submit").value;}
+</script>
 </body>
 </html>
