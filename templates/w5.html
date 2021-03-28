@@ -50,27 +50,28 @@ font-size:20px;
 <br>
   <form action="/predict" method="post">
 
-    <input type="text" id="V1" name="V1" placeholder="V1" size="2" >
+    <input type="text" id="V1" name="V1" placeholder="V1" size="2" required="required">
 
-        <input type="text" id="V2" name="V2" placeholder="V2" size="2">
-    <input type="text" id="V3" name="V3" placeholder="V3" size="2"><br><br>
-    <input type="text" id="V4" name="V4" placeholder="V4" size="2">
-	    <input type="text" id="V5" name="V5" placeholder="V5" size="2">
-    <input type="text" id="V6" name="V6" placeholder="V6" size="2"><br><br>
-	<input type="text" id="V7" name="V7" placeholder="V7" size="2">
-	    <input type="text" id="V8" name="V8" placeholder="V8" size="2">
-    <input type="text" id="V9" name="V9" placeholder="V9" size="2"><br><br>
+        <input type="text" id="V2" name="V2" placeholder="V2" size="2" required="required">
+    <input type="text" id="V3" name="V3" placeholder="V3" size="2" required="required"><br><br>
+    <input type="text" id="V4" name="V4" placeholder="V4" size="2" required="required">
+	    <input type="text" id="V5" name="V5" placeholder="V5" size="2" required="required">
+    <input type="text" id="V6" name="V6" placeholder="V6" size="2" required="required"><br><br>
+	<input type="text" id="V7" name="V7" placeholder="V7" size="2" required="required">
+	    <input type="text" id="V8" name="V8" placeholder="V8" size="2" required="required">
+    <input type="text" id="V9" name="V9" placeholder="V9" size="2" required="required"><br><br>
  
     <input id='submit' type="submit" value="Submit" onclick="getV()">
 	
   </form>
+	  <p><span id='display'></span></p>
   <br>
 	<label color="green">  {{ prediction_text }} </label>
 	</div>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script language="JavaScript">
 		function getV(){
-			document.getElementById("V1").innerHTML = document.getElementById("V1").value;
+			document.getElementById("display").innerHTML = document.getElementById("V1").value;
 		}
 
 </script>
