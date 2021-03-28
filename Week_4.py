@@ -22,11 +22,11 @@ def predict():
     if pred == 0:
                     #return render_template('w5.html', prediction_text='You Lost {}'.format(pred))
 
-            return render_template('w5.html', prediction_text='You Lost')
+            return render_template('w5.html', prediction_text='The Result is : You Lost')
             return render_template(...)
 
     else:
-            return render_template('w5.html', prediction_text='You Won')
+            return render_template('w5.html', prediction_text='The Result is : You Won')
     
 if __name__ == "__main__":
     app.run(debug=True)
