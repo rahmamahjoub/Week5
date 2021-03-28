@@ -20,6 +20,7 @@ def predict():
     pred = model.predict(final_features)
     if pred == 0:
             return render_template('w5.html', prediction_text='You Lost {}'.format(pred))
+            return render_template(...)
 
     else:
             return render_template('w5.html', prediction_text='You Won {}'.format(pred))
