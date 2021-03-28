@@ -50,14 +50,28 @@ font-size:20px;
 		}
 
 </script>
-	
+
+	<script>
+        function fun(){
+            document.getElementById('V1').value='';
+            document.getElementById('V2').value='';
+            document.getElementById('V3').value='';
+            document.getElementById('V4').value='';
+            document.getElementById('V5').value='';
+            document.getElementById('V6').value='';
+            document.getElementById('V7').value='';
+            document.getElementById('V8').value='';
+            document.getElementById('V9').value='';
+                     
+            }
+    </script>
 <body>
 
 <h3>Tic Tac Toe with Machine Learning</h3>
 
 <div class="container">
 <br>
-  <form action="/predict" method="post" onsubmit="return false">
+  <form action="/predict" method="post" onsubmit="getV()">
 
     <input type="text" id="V1" name="V1" placeholder="V1" size="2" required="required">
 
@@ -71,7 +85,8 @@ font-size:20px;
     <input type="text" id="V9" name="V9" placeholder="V9" size="2" required="required"><br><br>
  
     <input id='submit' type="submit" value="Submit" >
-	
+	    <input id='submit' type="submit" value="Reset" onclick="fun()" >
+
   </form>
   <br>
 	<label color="green">  {{ prediction_text }} </label>
