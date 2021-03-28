@@ -25,4 +25,4 @@ def predict():
             return render_template('w5.html', prediction_text='You Won {}'.format(pred))
     
 if __name__ == "__main__":
-    app.run(port = 5000, debug=True)
+    app.run(debug=True)
