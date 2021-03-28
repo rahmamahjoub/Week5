@@ -23,7 +23,7 @@ def predict():
                     #return render_template('w5.html', prediction_text='You Lost {}'.format(pred))
 
             return render_template('w5.html', prediction_text='The Result is : You Lost')
-            return render_template(...)
+            #return render_template(...)
 
     else:
             return render_template('w5.html', prediction_text='The Result is : You Won')
