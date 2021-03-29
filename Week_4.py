@@ -10,9 +10,6 @@ from flask_cors import CORS
 CORS(app)
 import joblib
 model = joblib.load('tic_tac_toe.pkl') # Load the Model
-@app.route('/')
-def home():
-    return render_template('w5.html')
 @app.route('/predict',methods=['POST'])
 def predict():
    
