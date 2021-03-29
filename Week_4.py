@@ -10,7 +10,7 @@ from flask_cors import CORS
 CORS(app)
 import joblib
 model = joblib.load('tic_tac_toe.pkl') # Load the Model
-@app.route('/predict',methods=['POST'])
+@app.route('/',methods=['POST'])
 def predict():
    
     int_features = [int(x) for x in request.form.values()]
